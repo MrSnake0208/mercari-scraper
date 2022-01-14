@@ -10,7 +10,7 @@ async function getKeyword() {
   });
 
   return new Promise((resolve, reject) => {
-    rl.question("What do you want to search", function (answer) {
+    rl.question("What do you want to search: ", function (answer) {
       resolve(answer);
       rl.close();
     });
