@@ -1,18 +1,21 @@
-const sendmail = require("sendmail")();
+const nodemailer = require("nodemailer");
 
 async function sendNotification(to, subject, text) {
-  sendmail(
-    {
-      from: "no-reply@mercari-scraper",
-      to,
-      subject,
-      html: text,
+  const transporter = nodemailer.createTransport({
+    service: "gmail",
+    auth: {
+      user: process.env.EMAIL,
+      pass: process.env.PASSWORD,
     },
-    function (err, reply) {
-      console.log(err && err.stack);
-      console.dir(reply);
-    }
-  );
+  });
+
+  const info = await transporter.sendMail({
+    from: "mercari-notification",
+    to,
+    subject,
+    text,
+  });
+  console.log(info);
 }
 
 module.exports = { sendNotification };

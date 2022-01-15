@@ -1,3 +1,4 @@
+require("dotenv").config();
 const browserObject = require("./browser");
 const scraperController = require("./pageController");
 
@@ -8,8 +9,4 @@ async function search() {
   scraperController(browserInstance);
 }
 
-// search();
-
-const { sendNotification } = require("./mailer");
-
-sendNotification("kserizawa081@gmail.com", "test", "test");
+search();
