@@ -1,0 +1,28 @@
+# name: scrape mercari
+
+# on:
+#   schedule:
+#     - cron: "*/10 * * * *"
+# jobs:
+#   backup:
+#     runs-on: ubuntu-latest
+#     steps:
+
+name: scrape mercari
+on: [push]
+# on:
+#   schedule:
+#     - cron: "*/10 * * * *"
+jobs:
+  Explore-GitHub-Actions:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v14
+      - name: create env file
+        run: |
+          touch .env
+          echo EMAIL =${{ secrets.EMAIL }} >> .env
+          echo PASSWORD =${{ secrets.PASSWORD }} >> .env
+      - run: npm install
+      - run: npm run start
