@@ -1,13 +1,3 @@
-# name: scrape mercari
-
-# on:
-#   schedule:
-#     - cron: "*/10 * * * *"
-# jobs:
-#   backup:
-#     runs-on: ubuntu-latest
-#     steps:
-
 name: scrape mercari
 on: [push]
 # on:
@@ -18,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-node@v14
+      - uses: actions/setup-node@v2
       - name: create env file
         run: |
           touch .env
