@@ -1,13 +1,18 @@
 const pageScraper = require("./pageScraper");
-async function scrapeFromKeyword(browserInstance, keyword) {
+const data = require("./meta");
+
+async function scrapeFromKeyword(browserInstance) {
   let browser;
   try {
     browser = await browserInstance;
-    await pageScraper.scraper(browser, keyword);
+    console.log(data);
+    await Promise.all(
+      data.map(async (d) => await pageScraper.scraper(browser, d))
+    );
+    // await pageScraper.scraper(browser, keyword);
   } catch (err) {
     console.log("Could not resolve the browser instace => ", err);
   }
 }
 
-module.exports = (browserInstance, keyword) =>
-  scrapeFromKeyword(browserInstance, keyword);
+module.exports = (browserInstance) => scrapeFromKeyword(browserInstance);
