@@ -9,12 +9,13 @@ async function getKeyword() {
     output: process.stdout,
   });
 
-  return new Promise((resolve, reject) => {
-    rl.question("What do you want to search: ", function (answer) {
-      resolve(answer);
-      rl.close();
-    });
-  });
+  return "アーロンチェア";
+  // return new Promise((resolve, reject) => {
+  //   rl.question("What do you want to search: ", function (answer) {
+  //     resolve(answer);
+  //     rl.close();
+  //   });
+  // });
 }
 
 async function search() {
