@@ -1,5 +1,5 @@
 const pageScraper = require("./pageScraper");
-const data = require("./meta");
+const data = require("./setting");
 
 async function scrapeFromKeyword(browserInstance) {
   let browser;
