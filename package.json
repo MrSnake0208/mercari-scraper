@@ -10,7 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "nodemailer": "^6.7.2",
-    "puppeteer": "^13.0.1"
+    "puppeteer": "^13.0.1",
+    "sendmail": "^1.6.1"
   }
 }

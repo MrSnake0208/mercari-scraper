@@ -1,10 +1,13 @@
 const fs = require("fs");
+const { sendNotification } = require("./mailer");
+
 const scraperObject = {
   baseUrl: "https://jp.mercari.com/search?keyword=",
   async scraper(browser, data) {
     const keyword = data.keyword;
     const max = data.maxPrice;
     const min = data.minPrice;
+    const to = data.emailTo;
     let page = await browser.newPage();
     const targetUrl = this.baseUrl + keyword;
     console.log(`Navigating to ${targetUrl}...`);
@@ -35,6 +38,13 @@ const scraperObject = {
 
     const newItems = findUpdatedOrNewItems(latestItems, oldItems);
 
+    if (!!newItems.length) {
+      sendNotification(
+        to,
+        `new ${keyword} was found with ${newItems[0].price} yen`,
+        `link: ${targetUrl}`
+      );
+    }
     console.log("newItems", newItems);
   },
 };

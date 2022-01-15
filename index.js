@@ -8,4 +8,8 @@ async function search() {
   scraperController(browserInstance);
 }
 
-search();
+// search();
+
+const { sendNotification } = require("./mailer");
+
+sendNotification("kserizawa081@gmail.com", "test", "test");
