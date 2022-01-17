@@ -5,6 +5,7 @@ This is a mercari scraper which runs on Github Actions every 5 minutes and sends
 ## How to use
 
 In order to use this app,
+
 1, edit setting.js and input values in the following format
 
 ```
