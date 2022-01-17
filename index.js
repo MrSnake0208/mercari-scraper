@@ -6,7 +6,7 @@ async function search() {
   console.log("starting browser");
   let browserInstance = browserObject.startBrowser();
 
-  scraperController(browserInstance);
+  // scraperController(browserInstance);
 }
 
 search();
