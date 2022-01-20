@@ -47,6 +47,7 @@ const scraperObject = {
       );
     }
     console.log("newItems", newItems);
+    return newItems;
   },
 };
 
