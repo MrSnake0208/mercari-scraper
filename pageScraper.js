@@ -28,13 +28,14 @@ const scraperObject = {
     );
 
     const json = JSON.stringify(latestItems);
-    fs.writeFile(`last${keyword}.json`, json, "utf-8", (err) => {
-      console.error(err);
-    });
 
     const oldItems = JSON.parse(
       fs.readFileSync(`last${keyword}.json`, "utf-8")
     );
+
+    fs.writeFile(`last${keyword}.json`, json, "utf-8", (err) => {
+      console.error(err);
+    });
 
     const newItems = findUpdatedOrNewItems(latestItems, oldItems);
 
