@@ -12,6 +12,7 @@ async function sendNotification(to, subject, text) {
       },
     });
 
+    console.log(transporter);
     const info = await transporter.sendMail({
       from: "mercari-notification",
       to,
