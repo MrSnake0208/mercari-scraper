@@ -20,6 +20,7 @@ async function sendNotification(to, subject, text) {
   } catch (e) {
     console.log(e);
   }
+  console.log("sentNotification done");
 }
 
 module.exports = { sendNotification };
