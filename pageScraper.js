@@ -43,7 +43,7 @@ const scraperObject = {
     const newItems = findUpdatedOrNewItems(latestItems, oldItems);
 
     if (!!newItems.length) {
-      sendNotification(
+      await sendNotification(
         to,
         `new ${keyword} was found with ${newItems[0].price} yen`,
         `link: ${targetUrl}`
