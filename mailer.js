@@ -2,6 +2,8 @@ const nodemailer = require("nodemailer");
 
 async function sendNotification(to, subject, text) {
   try {
+    console.log("process.env.EMAIL", process.env.EMAIL);
+    console.log("process.env.PASSWORD", process.env.PASSWORD);
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
