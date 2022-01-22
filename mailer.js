@@ -18,7 +18,7 @@ async function sendNotification(to, subject, text) {
     });
     console.log(info);
   } catch (e) {
-    console.log(e);
+    console.error(e);
   }
   console.log("sentNotification done");
 }

@@ -34,7 +34,7 @@ const scraperObject = {
     try {
       oldItems = JSON.parse(fs.readFileSync(`last${keyword}.json`, "utf-8"));
     } catch (e) {
-      console.log(e);
+      console.error(e);
     }
 
     fs.writeFile(`last${keyword}.json`, json, "utf-8", (err) => {
