@@ -24,7 +24,8 @@ const scraperObject = {
     });
 
     const latestItems = info.filter(
-      (item) => min < item.price && item.price < max
+      (item) =>
+        min < item.price && item.price < max && item.name.includes(keyword)
     );
 
     const json = JSON.stringify(latestItems);
